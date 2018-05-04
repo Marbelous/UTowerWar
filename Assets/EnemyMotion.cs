@@ -13,11 +13,6 @@ public class EnemyMotion : MonoBehaviour
         StartCoroutine(FollowPath());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     IEnumerator FollowPath()
     {
         print("Starting Patrol...");

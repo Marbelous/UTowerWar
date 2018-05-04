@@ -2,12 +2,18 @@
 
 [ExecuteInEditMode]
 [SelectionBase]
+[RequireComponent(typeof(Waypoint))]
+
 public class BoxEditor : MonoBehaviour
 {
-    const int gridSize = 10;
     Vector3 snapPos = new Vector3();
-
     TextMesh posText;
+    Waypoint waypoint;
+
+    private void Awake()
+    {
+        waypoint = GetComponent<Waypoint>();
+    }
 
     void Update()
     {
@@ -15,18 +21,21 @@ public class BoxEditor : MonoBehaviour
         UpdateLabel();
     }
 
+    private void SnapToGrid()
+    {
+        int gridSize = waypoint.GetGridSize();
+        transform.position = new Vector3(
+            waypoint.GetGridPos().x,
+            0f,
+            waypoint.GetGridPos().y);
+    }
+
     private void UpdateLabel()
     {
+        int gridSize = waypoint.GetGridSize();
         TextMesh posText = GetComponentInChildren<TextMesh>();
         string BoxPosText = snapPos.x / gridSize + "," + snapPos.z / gridSize;
         posText.text = BoxPosText;
         gameObject.name = "Box: " + BoxPosText;
-    }
-
-    private void SnapToGrid()
-    {
-        snapPos.x = Mathf.RoundToInt(transform.position.x / gridSize) * gridSize;
-        snapPos.z = Mathf.RoundToInt(transform.position.z / gridSize) * gridSize;
-        transform.position = new Vector3(snapPos.x, 0f, snapPos.z);
     }
 }
