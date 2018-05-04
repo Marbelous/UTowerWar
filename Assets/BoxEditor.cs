@@ -2,7 +2,7 @@
 
 [ExecuteInEditMode]
 [SelectionBase]
-public class EditorSnap : MonoBehaviour
+public class BoxEditor : MonoBehaviour
 {
     [SerializeField] [Range(1f, 20f)] float gridSize = 10f;
     Vector3 snapPos = new Vector3();
@@ -14,7 +14,9 @@ public class EditorSnap : MonoBehaviour
         snapPos.x = Mathf.RoundToInt(transform.position.x / gridSize) * gridSize;
         snapPos.z = Mathf.RoundToInt(transform.position.z / gridSize) * gridSize;
 
-        posText.text = snapPos.x / gridSize + "," + snapPos.z / gridSize;
+        string BoxPosText = snapPos.x / gridSize + "," + snapPos.z / gridSize;
+        posText.text = BoxPosText;
+        gameObject.name = "Box: " + BoxPosText;
 
         transform.position = new Vector3(snapPos.x, 0f, snapPos.z);
     }
