@@ -24,9 +24,9 @@ public class BoxEditor : MonoBehaviour
     {
         int gridSize = waypoint.GetGridSize();
         transform.position = new Vector3(
-            waypoint.GetGridPos().x,
+            waypoint.GetGridPos().x * gridSize,
             0f,
-            waypoint.GetGridPos().y);
+            waypoint.GetGridPos().y) * gridSize;
     }
 
     private void UpdateLabel()
@@ -34,9 +34,9 @@ public class BoxEditor : MonoBehaviour
         int gridSize = waypoint.GetGridSize();
         TextMesh posText = GetComponentInChildren<TextMesh>();
         string BoxPosText =
-            waypoint.GetGridPos().x / gridSize +
+            waypoint.GetGridPos().x +
             "," +
-            waypoint.GetGridPos().y / gridSize;
+            waypoint.GetGridPos().y;
 
         posText.text = BoxPosText;
         gameObject.name = "Box: " + BoxPosText;
