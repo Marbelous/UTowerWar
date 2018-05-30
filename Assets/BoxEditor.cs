@@ -6,8 +6,7 @@
 
 public class BoxEditor : MonoBehaviour
 {
-    Vector3 snapPos = new Vector3();
-    TextMesh posText;
+    //TextMesh posText;
     Waypoint waypoint;
 
     private void Awake()
@@ -34,7 +33,11 @@ public class BoxEditor : MonoBehaviour
     {
         int gridSize = waypoint.GetGridSize();
         TextMesh posText = GetComponentInChildren<TextMesh>();
-        string BoxPosText = snapPos.x / gridSize + "," + snapPos.z / gridSize;
+        string BoxPosText =
+            waypoint.GetGridPos().x / gridSize +
+            "," +
+            waypoint.GetGridPos().y / gridSize;
+
         posText.text = BoxPosText;
         gameObject.name = "Box: " + BoxPosText;
     }

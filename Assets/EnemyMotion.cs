@@ -10,7 +10,7 @@ public class EnemyMotion : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        StartCoroutine(FollowPath());
+        //StartCoroutine(FollowPath());
     }
 
     IEnumerator FollowPath()
