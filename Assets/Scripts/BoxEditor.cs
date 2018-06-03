@@ -6,7 +6,7 @@
 
 public class BoxEditor : MonoBehaviour
 {
-    //TextMesh posText;
+
     Waypoint waypoint;
 
     private void Awake()
@@ -31,7 +31,6 @@ public class BoxEditor : MonoBehaviour
 
     private void UpdateLabel()
     {
-        int gridSize = waypoint.GetGridSize();
         TextMesh posText = GetComponentInChildren<TextMesh>();
         string BoxPosText =
             waypoint.GetGridPos().x +

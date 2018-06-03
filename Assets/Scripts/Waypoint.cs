@@ -2,6 +2,8 @@
 
 public class Waypoint : MonoBehaviour
 {
+    public bool isExplored = false;
+    public Waypoint exploredFrom;
 
     const int gridSize = 10;
 
@@ -19,4 +21,11 @@ public class Waypoint : MonoBehaviour
         Mathf.RoundToInt(transform.position.z / gridSize)
         );
     }
+
+    public void SetTopColor(Color color)
+    {
+        MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
+        topMeshRenderer.material.color = color;
+    }
+
 }
