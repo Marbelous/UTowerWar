@@ -28,4 +28,9 @@ public class Waypoint : MonoBehaviour
         topMeshRenderer.material.color = color;
     }
 
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+            print("Mouse is over block: " + gameObject.name);
+    }
 }

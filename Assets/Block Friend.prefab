@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4372430344513370}
   - component: {fileID: 114086254295404712}
   - component: {fileID: 114914148279209326}
+  - component: {fileID: 65635923525698142}
   m_Layer: 0
   m_Name: Block Friend
   m_TagString: Untagged
@@ -54,7 +55,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4386518380224226}
   - component: {fileID: 33637292155503070}
-  - component: {fileID: 64556322577527208}
   - component: {fileID: 23223381756935184}
   m_Layer: 0
   m_Name: Top
@@ -113,8 +113,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1121198006729478}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 100, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.01, z: 1}
   m_Children:
   - {fileID: 4386518380224226}
   - {fileID: 4142707215257976}
@@ -251,20 +251,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1748238873745192}
   m_Mesh: {fileID: 4300000, guid: 427fe1209357f594e908fbc42cb22d3d, type: 3}
---- !u!64 &64556322577527208
-MeshCollider:
+--- !u!65 &65635923525698142
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1397138150825878}
+  m_GameObject: {fileID: 1121198006729478}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 9, y: 1, z: 9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!102 &102597240308321976
 TextMesh:
   serializedVersion: 3
@@ -272,7 +270,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1272532200128710}
-  m_Text: 1,-1
+  m_Text: 10,0
   m_OffsetZ: 0
   m_CharacterSize: 2
   m_LineSpacing: 1

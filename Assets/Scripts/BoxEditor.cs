@@ -40,4 +40,5 @@ public class BoxEditor : MonoBehaviour
         posText.text = BoxPosText;
         gameObject.name = "Box: " + BoxPosText;
     }
+
 }

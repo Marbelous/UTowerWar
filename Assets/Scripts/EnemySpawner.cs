@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-
-    [SerializeField] float enemySpawnDelay = 5f;
+    [Range(0.5f, 10f)]
+    [SerializeField]
+    float enemySpawnDelay = 2f;
     [SerializeField] EnemyMotion enemyPrefab;
-
 
     // Use this for initialization
     void Start()
@@ -15,14 +15,16 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(SpawnEnemies());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     IEnumerator SpawnEnemies()
     {
-        yield return new WaitForSeconds(enemySpawnDelay);
+        var delay = new WaitForSeconds(enemySpawnDelay);
+
+        while (true)
+        {
+            print("spawning...");
+            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+
+            yield return delay;
+        }
     }
 }
